@@ -57,13 +57,32 @@ function displayGameboard() {
         let gamespace = document.createElement("div");
         gameboardBoard.appendChild(gamespace);
         gamespace.classList.add("gamespace");
-        // console.log(index);
-        // gamespace.textContent = index;
-        gamespace.addEventListener("click", returnIndex(index));
+        gamespace.textContent = index;
+        gamespace.addEventListener("click", ()=> {
+            // console.log(index);
+            placeItem(index);
+        })
     });
 }
 
-function returnIndex(num) {
-    console.log(num);
+//place item in array
+function placeItem(space) {
+    let i = space;
+    gameboard[i] = "X";
+    console.log(gameboard);
 }
+
+// console.log(gameboardBoard.children);
+
+function testLoop() {
+    let childrenArray = gameboardBoard.children;
+    console.log(childrenArray);
+    // console.log(childrenArray[3]);
+    for (let x = 0; x < 9; x++) {
+        console.log(childrenArray[x-1]);
+    }
+}
+
+testLoop();
+
 displayGameboard();
