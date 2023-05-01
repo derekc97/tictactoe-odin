@@ -53,11 +53,17 @@ function showGameBoard() {
 }
 
 function displayGameboard() {
-    gameboard.forEach(space => {
+    gameboard.forEach((space, index) => {
         let gamespace = document.createElement("div");
         gameboardBoard.appendChild(gamespace);
         gamespace.classList.add("gamespace");
+        // console.log(index);
+        // gamespace.textContent = index;
+        gamespace.addEventListener("click", returnIndex(index));
     });
 }
 
+function returnIndex(num) {
+    console.log(num);
+}
 displayGameboard();
