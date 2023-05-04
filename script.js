@@ -11,6 +11,8 @@ let gameboardBoard = document.querySelector(".gameboard");
 
 resetGame();
 
+let test;
+
 function addToGameBoard(position) {
     if (gameboard[position] !== " ") {
         window.prompt("Enter an unoccupied space!")
@@ -72,17 +74,17 @@ function placeItem(space) {
     console.log(gameboard);
 }
 
-// console.log(gameboardBoard.children);
-
 function testLoop() {
-    let childrenArray = gameboardBoard.children;
-    console.log(childrenArray);
-    // console.log(childrenArray[3]);
-    for (let x = 0; x < 9; x++) {
-        console.log(childrenArray[x-1]);
-    }
+    let childrenArray = document.querySelectorAll(".gamespace");
+    // console.log(childrenArray);
+    // let childrenArray2 = gameboardBoard.children;
+    // console.log(childrenArray2);
+    test = childrenArray;
 }
+
+
+displayGameboard();
 
 testLoop();
 
-displayGameboard();
+console.log(test[2].innerHTML);
