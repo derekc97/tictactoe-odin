@@ -71,20 +71,21 @@ function displayGameboard() {
 function placeItem(space) {
     let i = space;
     gameboard[i] = "X";
-    console.log(gameboard);
+    // console.log(gameboard);
 }
 
 function testLoop() {
     let childrenArray = document.querySelectorAll(".gamespace");
-    // console.log(childrenArray);
-    // let childrenArray2 = gameboardBoard.children;
-    // console.log(childrenArray2);
     test = childrenArray;
+    childrenArray.forEach(square => {
+        // console.log(square.innerHTML)
+        square.addEventListener("click", ()=> {
+            console.log(square.innerHTML);
+        })
+    });
 }
 
 
 displayGameboard();
 
 testLoop();
-
-console.log(test[2].innerHTML);
